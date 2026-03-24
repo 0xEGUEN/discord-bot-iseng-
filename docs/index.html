@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT AI Bot - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .status-section {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .status-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            width: fit-content;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.online {
+            background: #10b981;
+        }
+
+        .status-dot.offline {
+            background: #ef4444;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .commands-section {
+            padding: 40px 20px;
+        }
+
+        .commands-section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .command-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .commands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .command-card {
+            padding: 20px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .command-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+        }
+
+        .command-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .command-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .command-type {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .command-type.utility {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .command-type.ai {
+            background: #fce7f3;
+            color: #be185d;
+        }
+
+        .command-card.hidden {
+            display: none;
+        }
+
+        .info-section {
+            padding: 40px 20px;
+            background: #f9fafb;
+            border-top: 1px solid #eee;
+        }
+
+        .info-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-box h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .info-box ol {
+            margin-left: 20px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .info-box li {
+            margin-bottom: 10px;
+        }
+
+        .info-box code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+        }
+
+        footer {
+            background: #f3f4f6;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .commands-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .command-filter {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 ChatGPT AI Bot</h1>
+            <p class="subtitle">Discord Bot Control Panel</p>
+        </header>
+
+        <div class="status-section">
+            <div class="status-card">
+                <span class="status-dot online"></span>
+                <span id="bot-status">Checking status...</span>
+            </div>
+        </div>
+
+        <section class="commands-section">
+            <h2>Available Commands</h2>
+            
+            <div class="command-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="utility">Utility</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+            </div>
+
+            <div class="commands-grid" id="commands-grid">
+                <!-- Commands will be inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Quick Start</h2>
+            <div class="info-box">
+                <h3>How to use slash commands:</h3>
+                <ol>
+                    <li>Open Discord and go to your server</li>
+                    <li>Type <code>/</code> to see available commands</li>
+                    <li>Click on a command to use it</li>
+                    <li>Fill in the parameters and press Enter</li>
+                </ol>
+            </div>
+        </section>
+
+        <footer>
+            <p>Made with ❤️ | Powered by discord.py & OpenAI</p>
+        </footer>
+    </div>
+
+    <script>
+        // Configuration - Change this to point to your backend server
+        const API_BASE_URL = localStorage.getItem('API_BASE_URL') || 'http://localhost:5000';
+        
+        // Commands data
+        const commands = [
+            {
+                "name": "/ping",
+                "description": "Check bot latency",
+                "type": "utility"
+            },
+            {
+                "name": "/hello",
+                "description": "Get a greeting from the bot",
+                "type": "utility"
+            },
+            {
+                "name": "/echo",
+                "description": "Echo your message",
+                "type": "utility"
+            },
+            {
+                "name": "/info",
+                "description": "Get bot information",
+                "type": "utility"
+            },
+            {
+                "name": "/ask",
+                "description": "Ask AI a question",
+                "type": "ai"
+            },
+            {
+                "name": "/imagine",
+                "description": "Generate creative text",
+                "type": "ai"
+            }
+        ];
+
+        // Check bot status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCommands();
+            checkBotStatus();
+            setupCommandFilters();
+        });
+
+        // Render commands
+        function renderCommands() {
+            const gridContainer = document.getElementById('commands-grid');
+            gridContainer.innerHTML = commands.map(command => `
+                <div class="command-card" data-type="${command.type}">
+                    <h3>${command.name}</h3>
+                    <p>${command.description}</p>
+                    <span class="command-type ${command.type}">${command.type}</span>
+                </div>
+            `).join('');
+        }
+
+        // Check bot status
+        async function checkBotStatus() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/status`);
+                const data = await response.json();
+                
+                const statusElement = document.getElementById('bot-status');
+                const statusDot = document.querySelector('.status-dot');
+                
+                if (data.status === 'online') {
+                    statusElement.textContent = 'Bot Status: Online ✓';
+                    statusElement.style.color = '#10b981';
+                    statusDot.classList.add('online');
+                } else {
+                    statusElement.textContent = 'Bot Status: Offline ✗';
+                    statusElement.style.color = '#ef4444';
+                    statusDot.classList.remove('online');
+                    statusDot.classList.add('offline');
+                }
+            } catch (error) {
+                console.error('Error checking bot status:', error);
+                document.getElementById('bot-status').textContent = 'Bot Status: Unable to check';
+                const statusDot = document.querySelector('.status-dot');
+                statusDot.classList.remove('online');
+                statusDot.classList.add('offline');
+            }
+        }
+
+        // Setup command filter buttons
+        function setupCommandFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const commandCards = document.querySelectorAll('.command-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter commands
+                    commandCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-type') === filter) {
+                            card.classList.remove('hidden');
+                            // Add animation
+                            card.style.animation = 'none';
+                            setTimeout(() => {
+                                card.style.animation = 'fadeIn 0.3s ease-in';
+                            }, 10);
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Refresh status every 30 seconds
+        setInterval(checkBotStatus, 30000);
+    </script>
+</body>
+</html>
