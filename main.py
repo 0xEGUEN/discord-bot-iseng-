@@ -56,6 +56,10 @@ async def load_cogs():
 async def main():
     async with bot:
         await load_cogs()
+        if not TOKEN:
+            print('[ERROR] DISCORD_TOKEN not set')
+            return
+        assert TOKEN is not None  # Type hint for mypy/pylance
         await bot.start(TOKEN)
 
 if __name__ == '__main__':

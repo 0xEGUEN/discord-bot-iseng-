@@ -1,10 +1,14 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-import yt_dlp
+import yt_dlp  # type: ignore
 import asyncio
 from collections import deque
 import logging
+import json
+import os
+import random
+from datetime import datetime
 
 logger = logging.getLogger('DiscordBot')
 
@@ -21,7 +25,25 @@ ffmpeg_options = {
     'options': '-vn',
 }
 
-ytdl = yt_dlp.YoutubeDL(ytdl_format_options)
+ytdl = yt_dlp.YoutubeDL(ytdl_format_options)  # type: ignore
+
+# Playlists storage
+PLAYLISTS_FILE = 'playlists.json'
+
+def load_playlists():
+    """Load playlists from file"""
+    if os.path.exists(PLAYLISTS_FILE):
+        try:
+            with open(PLAYLISTS_FILE, 'r') as f:
+                return json.load(f)
+        except:
+            return {}
+    return {}
+
+def save_playlists(playlists):
+    """Save playlists to file"""
+    with open(PLAYLISTS_FILE, 'w') as f:
+        json.dump(playlists, f, indent=2)
 
 
 class Song:
@@ -42,11 +64,14 @@ class MusicPlayer:
         self.voice_client = None
         self.is_playing = False
         self.is_paused = False
+        self.loop_mode = "off"  # off, song, queue
+        self.volume = 1.0
 
     async def play_next(self):
         """Play next song in queue"""
         if self.queue:
             self.current = self.queue.popleft()
+            assert self.current is not None, "Music item should not be None"
             try:
                 # Extract audio stream URL
                 try:
@@ -55,11 +80,11 @@ class MusicPlayer:
                     loop = asyncio.new_event_loop()
                     asyncio.set_event_loop(loop)
                 
-                data = await loop.run_in_executor(None, lambda: ytdl.extract_info(self.current.url, download=False))
+                data = await loop.run_in_executor(None, lambda: ytdl.extract_info(self.current.url, download=False))  # type: ignore
                 
                 if data and 'url' in data:
                     try:
-                        audio_source = discord.FFmpegPCMAudio(data['url'], **ffmpeg_options)
+                        audio_source = discord.FFmpegPCMAudio(data['url'], **ffmpeg_options)  # type: ignore
                     except FileNotFoundError:
                         logger.error('[MUSIC] FFmpeg not installed')
                         await self.play_next()  # Try next song
@@ -140,11 +165,11 @@ class MusicCommands(commands.Cog):
             return
         
         # Check if user is in voice channel
-        if not interaction.user.voice or not interaction.user.voice.channel:
-            await interaction.followup.send("❌ You need to be in a voice channel first!")
+        if not hasattr(interaction.user, 'voice') or not interaction.user.voice or not interaction.user.voice.channel:  # type: ignore
+            await interaction.response.send_message("❌ You need to be in a voice channel first!")
             return
 
-        voice_channel = interaction.user.voice.channel
+        voice_channel = interaction.user.voice.channel  # type: ignore
         
         try:
             player = self.get_player(interaction.guild_id)
@@ -294,12 +319,135 @@ class MusicCommands(commands.Cog):
                     embed.add_field(name="Status", value="⏸️ Paused", inline=False)
                 else:
                     embed.add_field(name="Status", value="▶️ Playing", inline=False)
+                embed.add_field(name="Loop", value=player.loop_mode.capitalize(), inline=True)
                 await interaction.response.send_message(embed=embed)
             else:
                 await interaction.response.send_message("❌ Nothing is playing!")
         except Exception as e:
             logger.error(f'[MUSIC] NowPlaying error: {e}')
             await interaction.response.send_message(f"❌ Error: {str(e)[:100]}")
+
+    @app_commands.command(name="loop", description="Set loop mode")
+    @app_commands.describe(mode="Loop mode: off, song, or queue")
+    async def loop(self, interaction: discord.Interaction, mode: str):
+        """Set loop mode"""
+        try:
+            player = self.get_player(interaction.guild_id)
+            
+            if mode.lower() not in ["off", "song", "queue"]:
+                await interaction.response.send_message("❌ Mode must be: off, song, or queue", ephemeral=True)
+                return
+            
+            player.loop_mode = mode.lower()
+            
+            emoji = {"off": "⭕", "song": "🔂", "queue": "🔁"}
+            await interaction.response.send_message(f"{emoji.get(mode.lower(), '❓')} Loop mode set to: **{mode.capitalize()}**")
+            logger.info(f'[MUSIC] Loop mode set to {mode}')
+        except Exception as e:
+            logger.error(f'[MUSIC] Loop error: {e}')
+            await interaction.response.send_message(f"❌ Error: {str(e)[:100]}")
+
+    @app_commands.command(name="shuffle", description="Shuffle the queue")
+    async def shuffle(self, interaction: discord.Interaction):
+        """Shuffle the queue"""
+        try:
+            player = self.get_player(interaction.guild_id)
+            
+            if player.queue:
+                songs = list(player.queue)
+                random.shuffle(songs)
+                player.queue = deque(songs)
+                await interaction.response.send_message(f"🔀 Queue shuffled! ({len(songs)} songs)")
+                logger.info(f'[MUSIC] Queue shuffled ({len(songs)} songs)')
+            else:
+                await interaction.response.send_message("❌ Queue is empty!")
+        except Exception as e:
+            logger.error(f'[MUSIC] Shuffle error: {e}')
+            await interaction.response.send_message(f"❌ Error: {str(e)[:100]}")
+
+    @app_commands.command(name="saveplaylist", description="Save current queue as playlist")
+    @app_commands.describe(name="Playlist name")
+    async def save_playlist(self, interaction: discord.Interaction, name: str):
+        """Save playlist"""
+        try:
+            player = self.get_player(interaction.guild_id)
+            
+            if not player.current and not player.queue:
+                await interaction.response.send_message("❌ Queue is empty!")
+                return
+            
+            playlists = load_playlists()
+            user_id = str(interaction.user.id)
+            
+            if user_id not in playlists:
+                playlists[user_id] = {}
+            
+            songs = []
+            if player.current:
+                songs.append({
+                    "title": player.current.title,
+                    "url": player.current.url,
+                    "duration": player.current.duration
+                })
+            
+            for song in player.queue:
+                songs.append({
+                    "title": song.title,
+                    "url": song.url,
+                    "duration": song.duration
+                })
+            
+            playlists[user_id][name] = {
+                "songs": songs,
+                "created": str(datetime.now())
+            }
+            
+            save_playlists(playlists)
+            
+            embed = discord.Embed(
+                title="💾 Playlist Saved",
+                description=f"Playlist **{name}** saved with {len(songs)} songs",
+                color=discord.Color.green()
+            )
+            await interaction.response.send_message(embed=embed)
+            logger.info(f'[MUSIC] Playlist saved: {name} ({len(songs)} songs)')
+        except Exception as e:
+            logger.error(f'[MUSIC] Save playlist error: {e}')
+            await interaction.response.send_message(f"❌ Error: {str(e)[:100]}")
+
+    @app_commands.command(name="loadplaylist", description="Load a saved playlist")
+    @app_commands.describe(name="Playlist name")
+    async def load_playlist(self, interaction: discord.Interaction, name: str):
+        """Load playlist"""
+        try:
+            player = self.get_player(interaction.guild_id)
+            playlists = load_playlists()
+            user_id = str(interaction.user.id)
+            
+            if user_id not in playlists or name not in playlists[user_id]:
+                await interaction.response.send_message("❌ Playlist not found!")
+                return
+            
+            playlist = playlists[user_id][name]
+            songs = playlist["songs"]
+            
+            # Add songs to queue
+            for song_data in songs:
+                song = Song(song_data["title"], song_data["url"], song_data["duration"])
+                player.queue.append(song)
+            
+            embed = discord.Embed(
+                title="📋 Playlist Loaded",
+                description=f"Loaded playlist **{name}** with {len(songs)} songs",
+                color=discord.Color.blue()
+            )
+            await interaction.response.send_message(embed=embed)
+            logger.info(f'[MUSIC] Playlist loaded: {name} ({len(songs)} songs)')
+        except Exception as e:
+            logger.error(f'[MUSIC] Load playlist error: {e}')
+            await interaction.response.send_message(f"❌ Error: {str(e)[:100]}")
+
+
 
 
 async def setup(bot):

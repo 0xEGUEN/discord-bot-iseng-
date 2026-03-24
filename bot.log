@@ -761,3 +761,48 @@ openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded you
 2026-03-24 22:46:19,157 | [INFO    ] | DiscordBot | ============================================================
 2026-03-24 22:46:19,157 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
 2026-03-24 22:46:19,157 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:39:41,218 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:39:41,218 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-25 01:39:41,218 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:39:41,719 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-25 01:39:41,720 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-25 01:39:41,722 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:39:41,722 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-25 01:39:41,722 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:39:41,724 | [INFO    ] | discord.client | logging in using static token
+2026-03-25 01:39:42,691 | [INFO    ] | DiscordBot | [COGS] Loaded ai_commands.py
+2026-03-25 01:39:42,709 | [ERROR   ] | DiscordBot | [COGS] Failed to load music_commands.py: Extension 'cogs.music_commands' raised an error: ModuleNotFoundError: No module named 'yt_dlp'
+2026-03-25 01:39:42,714 | [INFO    ] | DiscordBot | [COGS] Loaded utility_commands.py
+2026-03-25 01:39:42,714 | [INFO    ] | DiscordBot | [COGS] Loaded 2 cog(s), 1 failed
+2026-03-25 01:39:43,541 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: f4d00105e30b71f918b7fb09744291ce).
+2026-03-25 01:39:45,550 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:39:45,551 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-25 01:39:45,551 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-25 01:39:45,551 | [INFO    ] | DiscordBot | [READY] Latency: 282ms
+2026-03-25 01:39:45,551 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:39:45,552 | [INFO    ] | DiscordBot | [STATUS] Bot status set to: Streaming "build with love"
+2026-03-25 01:39:46,085 | [INFO    ] | DiscordBot | [SYNC] Synced 6 command(s)
+2026-03-25 01:40:18,360 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:40:18,361 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-25 01:40:18,361 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:40:18,658 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-25 01:40:18,659 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-25 01:40:18,660 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:40:18,660 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-25 01:40:18,660 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:40:18,661 | [INFO    ] | discord.client | logging in using static token
+2026-03-25 01:40:19,612 | [INFO    ] | DiscordBot | [COGS] Loaded ai_commands.py
+2026-03-25 01:40:19,615 | [ERROR   ] | DiscordBot | [COGS] Failed to load music_commands.py: Extension 'cogs.music_commands' raised an error: ModuleNotFoundError: No module named 'yt_dlp'
+2026-03-25 01:40:19,618 | [INFO    ] | DiscordBot | [COGS] Loaded utility_commands.py
+2026-03-25 01:40:19,618 | [INFO    ] | DiscordBot | [COGS] Loaded 2 cog(s), 1 failed
+2026-03-25 01:40:20,385 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 2d97cd167861b8c580508e96c6c0342d).
+2026-03-25 01:40:22,430 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:40:22,430 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-25 01:40:22,431 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-25 01:40:22,431 | [INFO    ] | DiscordBot | [READY] Latency: 244ms
+2026-03-25 01:40:22,431 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:40:22,431 | [INFO    ] | DiscordBot | [STATUS] Bot status set to: Streaming "build with love"
+2026-03-25 01:40:22,925 | [INFO    ] | DiscordBot | [SYNC] Synced 6 command(s)
+2026-03-25 01:40:33,529 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:40:33,529 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
+2026-03-25 01:40:33,529 | [INFO    ] | DiscordBot | ============================================================

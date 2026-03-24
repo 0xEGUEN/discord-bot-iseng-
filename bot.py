@@ -59,7 +59,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 # Store Groq client on bot for sharing with cogs
-bot.groq_client = client
+bot.__dict__['groq_client'] = client  # type: ignore
 
 # Event: Bot is ready
 @bot.event
@@ -201,11 +201,78 @@ async def ask(ctx, *, question):
 async def list_commands(ctx):
     logger.info(f'[COMMANDS] Command executed by {ctx.author}')
     try:
-        embed = discord.Embed(title='Available Commands', color=discord.Color.green())
-        for command in bot.commands:
-            embed.add_field(name=f'!{command.name}', value=command.help, inline=False)
+        # Create main embed with bot information
+        embed = discord.Embed(
+            title='🤖 Bot Commands',
+            description='Use `/command_name` for slash commands or `!command_name` for prefix commands',
+            color=discord.Color.blurple()
+        )
+        embed.set_thumbnail(url=bot.user.avatar.url if bot.user and bot.user.avatar else '')
+        
+        # UTILITY COMMANDS
+        embed.add_field(
+            name='🛠️ Utility Commands',
+            value='Basic bot utilities',
+            inline=False
+        )
+        utility_cmds = [
+            ('🏓 `ping`', 'Check bot latency and response time'),
+            ('👋 `hello`', 'Get a friendly greeting from the bot'),
+            ('🔊 `echo <message>`', 'Repeat your message'),
+            ('ℹ️ `info`', 'Display bot information and stats'),
+        ]
+        for cmd, desc in utility_cmds:
+            embed.add_field(name=cmd, value=desc, inline=False)
+        
+        # MUSIC COMMANDS
+        embed.add_field(
+            name='🎵 Music Commands (Slash Commands)',
+            value='YouTube music player - Use `/play`, `/pause`, etc.',
+            inline=False
+        )
+        music_cmds = [
+            ('▶️ `/play <query>`', 'Play music from YouTube search'),
+            ('⏸️ `/pause`', 'Pause the current song'),
+            ('▶️ `/resume`', 'Resume paused music'),
+            ('⏹️ `/stop`', 'Stop music and leave voice channel'),
+            ('⏭️ `/skip`', 'Skip to the next song in queue'),
+            ('📋 `/queue`', 'Show the music queue'),
+            ('🎶 `/nowplaying`', 'See what\'s currently playing'),
+        ]
+        for cmd, desc in music_cmds:
+            embed.add_field(name=cmd, value=desc, inline=False)
+        
+        # AI COMMANDS
+        embed.add_field(
+            name='🤖 AI Commands (Slash Commands)',
+            value='Powered by Groq LLaMA 3.3 (70B)',
+            inline=False
+        )
+        ai_cmds = [
+            ('💬 `/ask <question>`', 'Ask the AI any question'),
+            ('✨ `/imagine <prompt>`', 'Generate creative text with AI'),
+        ]
+        for cmd, desc in ai_cmds:
+            embed.add_field(name=cmd, value=desc, inline=False)
+        
+        # ADMIN COMMANDS
+        embed.add_field(
+            name='⚙️ Admin Commands',
+            value='Server administration utilities',
+            inline=False
+        )
+        admin_cmds = [
+            ('🔄 `sync`', 'Sync slash commands (Admin only)'),
+        ]
+        for cmd, desc in admin_cmds:
+            embed.add_field(name=cmd, value=desc, inline=False)
+        
+        # FOOTER
+        embed.set_footer(text=f'Bot Version: 2.0 | Requested by {ctx.author}', icon_url=ctx.author.avatar.url if ctx.author.avatar else '')
+        embed.timestamp = datetime.now()
+        
         await ctx.send(embed=embed)
-        logger.info(f'[COMMANDS] Listed {len(bot.commands)} commands')
+        logger.info(f'[COMMANDS] Help menu displayed for {ctx.author}')
     except Exception as e:
         logger.error(f'[COMMANDS] Error: {e}')
         logger.debug(traceback.format_exc())

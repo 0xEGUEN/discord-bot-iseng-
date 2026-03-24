@@ -78,9 +78,9 @@
         </footer>
     </div>
 
-    <script>
+    <script type="text/javascript">
         // Store translations globally
-        window.translations = {{ translations | safe }};
+        window.translations = JSON.parse('{{ translations | tojson | safe }}');
         window.currentLang = '{{ current_lang }}';
     </script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
