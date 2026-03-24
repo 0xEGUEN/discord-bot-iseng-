@@ -1,8 +1,13 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import os
 from dotenv import load_dotenv
 from datetime import datetime
 import json
+import sys
+
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from language_support import get_language, translate
 
 load_dotenv()
 
@@ -22,6 +27,12 @@ bot_stats = {
 
 @app.route('/')
 def dashboard():
+    lang = request.args.get('lang', 'en')
+    if lang not in ['en', 'id']:
+        lang = 'en'
+    
+    translations = get_language(lang)
+    
     bot_name = "ChatGPT AI Bot"
     commands = [
         {
@@ -66,7 +77,11 @@ def dashboard():
         }
     ]
     
-    return render_template('index.html', bot_name=bot_name, commands=commands)
+    return render_template('index.html', 
+                         bot_name=bot_name, 
+                         commands=commands,
+                         current_lang=lang,
+                         translations=json.dumps(translations))
 
 @app.route('/api/status')
 def get_status():
@@ -95,6 +110,13 @@ def get_stats():
         "music_playing": bot_stats["music_playing"],
         "timestamp": datetime.now().isoformat()
     })
+
+@app.route('/api/translations/<lang>')
+def get_translations(lang):
+    """Get translations for a specific language"""
+    if lang not in ['en', 'id']:
+        lang = 'en'
+    return jsonify(get_language(lang))
 
 @app.route('/api/health')
 def health_check():

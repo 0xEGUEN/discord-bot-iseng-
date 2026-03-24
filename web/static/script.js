@@ -1,8 +1,69 @@
+// Language support
+let currentLang = window.currentLang || 'en';
+const translations = window.translations || {};
+
+// Translation function
+function t(key) {
+    return translations[key] || key;
+}
+
+// Update all translatable elements
+function updateTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const translation = t(key);
+        
+        // Handle arrays (like quick_start_steps)
+        if (Array.isArray(translation)) {
+            el.innerHTML = translation.map((step, i) => `<li>${step}</li>`).join('');
+        } else {
+            el.textContent = translation;
+        }
+    });
+}
+
+// Setup language switcher
+function setupLanguageSwitcher() {
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const newLang = this.getAttribute('data-lang');
+            if (newLang !== currentLang) {
+                currentLang = newLang;
+                
+                // Update active button
+                langBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update translations
+                fetch(`/api/translations/${newLang}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        Object.assign(translations, data);
+                        updateTranslations();
+                        
+                        // Save preference
+                        localStorage.setItem('preferredLang', newLang);
+                    });
+            }
+        });
+    });
+}
+
 // Check bot status on page load
 document.addEventListener('DOMContentLoaded', function() {
+    // Load saved language preference
+    const savedLang = localStorage.getItem('preferredLang');
+    if (savedLang && savedLang !== currentLang) {
+        currentLang = savedLang;
+        document.querySelector(`[data-lang="${savedLang}"]`)?.click();
+    }
+    
+    updateTranslations();
     checkBotStatus();
     loadBotStats();
     setupCommandFilters();
+    setupLanguageSwitcher();
     
     // Auto-refresh stats every 5 seconds
     setInterval(loadBotStats, 5000);
@@ -16,10 +77,10 @@ async function checkBotStatus() {
         
         const statusElement = document.getElementById('bot-status');
         if (data.status === 'online') {
-            statusElement.textContent = 'Bot Status: Online ✓';
+            statusElement.textContent = t('status') + ': ' + t('online') + ' ✓';
             statusElement.style.color = '#10b981';
         } else {
-            statusElement.textContent = 'Bot Status: Offline ✗';
+            statusElement.textContent = t('status') + ': ' + t('offline') + ' ✗';
             statusElement.style.color = '#ef4444';
         }
     } catch (error) {
@@ -49,42 +110,42 @@ async function loadBotStats() {
                 <div class="stat-card">
                     <div class="stat-icon">⏱️</div>
                     <div class="stat-content">
-                        <div class="stat-label">Uptime</div>
+                        <div class="stat-label">${t('uptime')}</div>
                         <div class="stat-value">${data.uptime}</div>
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">🖥️</div>
                     <div class="stat-content">
-                        <div class="stat-label">Guilds</div>
+                        <div class="stat-label">${t('guilds')}</div>
                         <div class="stat-value">${data.guilds}</div>
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">👥</div>
                     <div class="stat-content">
-                        <div class="stat-label">Users</div>
+                        <div class="stat-label">${t('users')}</div>
                         <div class="stat-value">${data.users}</div>
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">📡</div>
                     <div class="stat-content">
-                        <div class="stat-label">Latency</div>
+                        <div class="stat-label">${t('latency')}</div>
                         <div class="stat-value">${data.latency}</div>
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">⚙️</div>
                     <div class="stat-content">
-                        <div class="stat-label">Version</div>
+                        <div class="stat-label">${t('version')}</div>
                         <div class="stat-value">v${data.version}</div>
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">📊</div>
                     <div class="stat-content">
-                        <div class="stat-label">Commands Used</div>
+                        <div class="stat-label">${t('commands_used')}</div>
                         <div class="stat-value">${data.commands_used}</div>
                     </div>
                 </div>

@@ -9,24 +9,30 @@
 <body>
     <div class="container">
         <header>
-            <h1>🤖 {{ bot_name }}</h1>
-            <p class="subtitle">Discord Bot Control Panel</p>
+            <div class="header-content">
+                <h1>🤖 {{ bot_name }}</h1>
+                <p class="subtitle" data-i18n="control_panel">Discord Bot Control Panel</p>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="id">Bahasa Indonesia</button>
+            </div>
         </header>
 
         <div class="status-section">
             <div class="status-card">
                 <span class="status-dot online"></span>
-                <span id="bot-status">Checking status...</span>
+                <span id="bot-status" data-i18n="status">Checking status...</span>
             </div>
         </div>
 
         <section class="stats-section">
-            <h2>Real-time Statistics</h2>
+            <h2 data-i18n="real_time_statistics">Real-time Statistics</h2>
             <div class="stats-grid" id="bot-stats">
                 <div class="stat-card loading">
                     <div class="stat-icon">⏳</div>
                     <div class="stat-content">
-                        <div class="stat-label">Loading...</div>
+                        <div class="stat-label" data-i18n="loading">Loading...</div>
                         <div class="stat-value">--</div>
                     </div>
                 </div>
@@ -34,7 +40,7 @@
         </section>
 
         <section class="commands-section">
-            <h2>Available Commands</h2>
+            <h2 data-i18n="available_commands">Available Commands</h2>
             
             <div class="command-filter">
                 <button class="filter-btn active" data-filter="all">All</button>
@@ -55,10 +61,10 @@
         </section>
 
         <section class="info-section">
-            <h2>Quick Start</h2>
+            <h2 data-i18n="quick_start">Quick Start</h2>
             <div class="info-box">
-                <h3>How to use slash commands:</h3>
-                <ol>
+                <h3 data-i18n="how_to_use">How to use slash commands:</h3>
+                <ol id="quick-start-list">
                     <li>Open Discord and go to your server</li>
                     <li>Type <code>/</code> to see available commands</li>
                     <li>Click on a command to use it</li>
@@ -68,10 +74,15 @@
         </section>
 
         <footer>
-            <p>Made with ❤️ | Powered by discord.py & OpenAI</p>
+            <p data-i18n="powered_by">Made with ❤️ | Powered by discord.py & OpenAI</p>
         </footer>
     </div>
 
+    <script>
+        // Store translations globally
+        window.translations = {{ translations | safe }};
+        window.currentLang = '{{ current_lang }}';
+    </script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

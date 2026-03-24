@@ -1,0 +1,50 @@
+{
+  "en": {
+    "status": "Bot Status",
+    "online": "Online",
+    "offline": "Offline",
+    "real_time_statistics": "Real-time Statistics",
+    "available_commands": "Available Commands",
+    "quick_start": "Quick Start",
+    "how_to_use": "How to use slash commands:",
+    "quick_start_steps": [
+      "Open Discord and go to your server",
+      "Type / to see available commands",
+      "Click on a command to use it",
+      "Fill in the parameters and press Enter"
+    ],
+    "uptime": "Uptime",
+    "guilds": "Guilds",
+    "users": "Users",
+    "latency": "Latency",
+    "version": "Version",
+    "commands_used": "Commands Used",
+    "loading": "Loading...",
+    "powered_by": "Made with ❤️ | Powered by discord.py & OpenAI",
+    "control_panel": "Discord Bot Control Panel"
+  },
+  "id": {
+    "status": "Status Bot",
+    "online": "Online",
+    "offline": "Offline",
+    "real_time_statistics": "Statistik Real-time",
+    "available_commands": "Perintah Tersedia",
+    "quick_start": "Mulai Cepat",
+    "how_to_use": "Cara menggunakan slash commands:",
+    "quick_start_steps": [
+      "Buka Discord dan pergi ke server Anda",
+      "Ketik / untuk melihat perintah yang tersedia",
+      "Klik perintah untuk menggunakannya",
+      "Isi parameter dan tekan Enter"
+    ],
+    "uptime": "Waktu Aktif",
+    "guilds": "Guild",
+    "users": "Pengguna",
+    "latency": "Latensi",
+    "version": "Versi",
+    "commands_used": "Perintah Digunakan",
+    "loading": "Memuat...",
+    "powered_by": "Dibuat dengan ❤️ | Didukung oleh discord.py & OpenAI",
+    "control_panel": "Panel Kontrol Bot Discord"
+  }
+}

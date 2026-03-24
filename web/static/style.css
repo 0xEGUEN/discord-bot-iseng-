@@ -24,7 +24,14 @@ header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
     text-align: center;
+    flex: 1;
 }
 
 header h1 {
@@ -35,6 +42,39 @@ header h1 {
 .subtitle {
     font-size: 1.1em;
     opacity: 0.9;
+}
+
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.lang-btn {
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.lang-btn.active {
+    background: white;
+    color: #667eea;
+    border-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .status-section {
@@ -283,8 +323,28 @@ footer {
 }
 
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .header-content {
+        text-align: center;
+    }
+
     header h1 {
         font-size: 1.8em;
+    }
+
+    .language-switcher {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .lang-btn {
+        flex: 1;
+        min-width: 100px;
     }
 
     .commands-grid {
