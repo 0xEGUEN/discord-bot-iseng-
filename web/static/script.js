@@ -56,7 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedLang = localStorage.getItem('preferredLang');
     if (savedLang && savedLang !== currentLang) {
         currentLang = savedLang;
-        document.querySelector(`[data-lang="${savedLang}"]`)?.click();
+        // Properly find and click language button
+        const langBtn = document.querySelector(`[data-lang="${savedLang}"]`);
+        if (langBtn) {
+            langBtn.click();
+        }
     }
     
     updateTranslations();

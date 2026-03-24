@@ -13,6 +13,11 @@ load_dotenv()
 
 app = Flask(__name__)
 
+# Security: Disable debug mode in production
+DEBUG_MODE = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
+app.config['DEBUG'] = DEBUG_MODE
+app.config['ENV'] = 'development' if DEBUG_MODE else 'production'
+
 # Dummy stats (in production, you'd connect to the actual bot)
 bot_stats = {
     "is_online": True,
@@ -114,6 +119,9 @@ def get_stats():
 @app.route('/api/translations/<lang>')
 def get_translations(lang):
     """Get translations for a specific language"""
+    # Input validation: prevent injection attacks
+    if not isinstance(lang, str) or len(lang) > 5 or not lang.isalpha():
+        lang = 'en'
     if lang not in ['en', 'id']:
         lang = 'en'
     return jsonify(get_language(lang))
@@ -127,4 +135,6 @@ def health_check():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # Use environment variable for debug mode
+    port = int(os.getenv('PORT', 5000))
+    app.run(debug=DEBUG_MODE, port=port, host='0.0.0.0')

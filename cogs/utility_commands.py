@@ -20,6 +20,10 @@ class UtilityCommands(commands.Cog):
     @app_commands.describe(message="The message to echo")
     async def echo(self, interaction: discord.Interaction, message: str):
         """Echo user message"""
+        # Validate message length (Discord limit is 2000)
+        if len(message) > 2000:
+            await interaction.response.send_message("❌ Message is too long (max 2000 characters)")
+            return
         await interaction.response.send_message(message)
 
     @app_commands.command(name="info", description="Get bot information")

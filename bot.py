@@ -32,22 +32,34 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 
+# Validate required environment variables
+if not TOKEN:
+    logger.error('[INIT] DISCORD_TOKEN environment variable not set')
+    exit(1)
+
 logger.info('=' * 60)
 logger.info('[BOT] DISCORD BOT STARTING UP')
 logger.info('=' * 60)
 
 # Initialize Groq client
-try:
-    client = Groq(api_key=GROQ_API_KEY)
-    logger.info('[INIT] Groq client initialized')
-except Exception as e:
-    logger.error(f'[INIT] Failed to initialize Groq client: {e}')
+if not GROQ_API_KEY:
+    logger.warning('[INIT] GROQ_API_KEY not set, AI features disabled')
     client = None
+else:
+    try:
+        client = Groq(api_key=GROQ_API_KEY)
+        logger.info('[INIT] Groq client initialized')
+    except Exception as e:
+        logger.error(f'[INIT] Failed to initialize Groq client: {e}')
+        client = None
 
 # Create bot instance
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
+
+# Store Groq client on bot for sharing with cogs
+bot.groq_client = client
 
 # Event: Bot is ready
 @bot.event
@@ -153,6 +165,13 @@ async def ask(ctx, *, question):
                 ],
                 max_tokens=500
             )
+            
+            # Validate API response
+            if not response.choices or len(response.choices) == 0:
+                logger.error('[ASK] Empty response from API')
+                await ctx.send('❌ Empty response from AI')
+                return
+            
             answer = response.choices[0].message.content
             
             # Handle None response
@@ -208,10 +227,26 @@ async def sync(ctx):
 
 # Load cogs
 async def load_cogs():
-    for filename in os.listdir('./cogs'):
-        if filename.endswith('.py'):
-            await bot.load_extension(f'cogs.{filename[:-3]}')
-            print(f'✓ Loaded cog: {filename}')
+    cogs_folder = './cogs'
+    cogs_loaded = 0
+    cogs_failed = 0
+    
+    if not os.path.exists(cogs_folder):
+        logger.warning(f'[COGS] {cogs_folder} directory not found')
+        return
+    
+    for filename in os.listdir(cogs_folder):
+        if filename.endswith('.py') and not filename.startswith('__'):
+            try:
+                await bot.load_extension(f'cogs.{filename[:-3]}')
+                logger.info(f'[COGS] Loaded {filename}')
+                cogs_loaded += 1
+            except Exception as e:
+                logger.error(f'[COGS] Failed to load {filename}: {e}')
+                logger.debug(traceback.format_exc())
+                cogs_failed += 1
+    
+    logger.info(f'[COGS] Loaded {cogs_loaded} cog(s), {cogs_failed} failed')
 
 @bot.event
 async def setup_hook():

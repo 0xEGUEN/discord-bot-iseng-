@@ -7,7 +7,19 @@ from groq import Groq
 class AICommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.groq_client = Groq(api_key=os.getenv('GROQ_API_KEY'))
+        # Use bot's Groq client if available, otherwise create new one
+        if hasattr(bot, 'groq_client') and bot.groq_client:
+            self.groq_client = bot.groq_client
+        else:
+            groq_key = os.getenv('GROQ_API_KEY')
+            if groq_key:
+                try:
+                    self.groq_client = Groq(api_key=groq_key)
+                except Exception as e:
+                    print(f'[AI_COMMANDS] Failed to initialize Groq: {e}')
+                    self.groq_client = None
+            else:
+                self.groq_client = None
 
     @app_commands.command(name="ask", description="Ask AI a question")
     @app_commands.describe(question="Your question for the AI")
@@ -16,6 +28,10 @@ class AICommands(commands.Cog):
         await interaction.response.defer()
         
         try:
+            if not self.groq_client:
+                await interaction.followup.send("❌ AI service not configured")
+                return
+            
             response = self.groq_client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
                 messages=[
@@ -23,6 +39,12 @@ class AICommands(commands.Cog):
                 ],
                 max_tokens=500
             )
+            
+            # Validate API response
+            if not response.choices or len(response.choices) == 0:
+                await interaction.followup.send("❌ Empty response from AI")
+                return
+            
             answer = response.choices[0].message.content
             
             # Handle None response
@@ -46,6 +68,10 @@ class AICommands(commands.Cog):
         await interaction.response.defer()
         
         try:
+            if not self.groq_client:
+                await interaction.followup.send("❌ AI service not configured")
+                return
+            
             response = self.groq_client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
                 messages=[
@@ -53,6 +79,12 @@ class AICommands(commands.Cog):
                 ],
                 max_tokens=500
             )
+            
+            # Validate API response
+            if not response.choices or len(response.choices) == 0:
+                await interaction.followup.send("❌ Empty response from AI")
+                return
+            
             result = response.choices[0].message.content
             
             # Handle None response

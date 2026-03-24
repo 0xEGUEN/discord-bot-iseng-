@@ -49,16 +49,33 @@ class MusicPlayer:
             self.current = self.queue.popleft()
             try:
                 # Extract audio stream URL
-                loop = asyncio.get_event_loop()
+                try:
+                    loop = asyncio.get_running_loop()
+                except RuntimeError:
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                
                 data = await loop.run_in_executor(None, lambda: ytdl.extract_info(self.current.url, download=False))
                 
                 if data and 'url' in data:
-                    audio_source = discord.FFmpegPCMAudio(data['url'], **ffmpeg_options)
+                    try:
+                        audio_source = discord.FFmpegPCMAudio(data['url'], **ffmpeg_options)
+                    except FileNotFoundError:
+                        logger.error('[MUSIC] FFmpeg not installed')
+                        await self.play_next()  # Try next song
+                        return
+                    except Exception as e:
+                        logger.error(f'[MUSIC] FFmpeg error: {e}')
+                        await self.play_next()  # Try next song
+                        return
                     
                     def after_play(error):
                         if error:
                             logger.error(f'[MUSIC] Playback error: {error}')
-                        asyncio.run_coroutine_threadsafe(self.play_next(), self.bot.loop)
+                        try:
+                            asyncio.run_coroutine_threadsafe(self.play_next(), self.bot.loop)
+                        except RuntimeError:
+                            logger.error('[MUSIC] Event loop closed')
                     
                     if self.voice_client and self.voice_client.is_connected():
                         self.voice_client.play(audio_source, after=after_play)
@@ -97,6 +114,13 @@ class MusicCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.players = {}  # guild_id -> MusicPlayer
+    
+    @commands.Cog.listener()
+    async def on_guild_remove(self, guild):
+        """Clean up player when bot leaves guild"""
+        if guild.id in self.players:
+            del self.players[guild.id]
+            logger.info(f'[MUSIC] Cleaned up player for guild {guild.id}')
 
     def get_player(self, guild_id):
         """Get or create music player for guild"""
@@ -110,6 +134,11 @@ class MusicCommands(commands.Cog):
         """Play music from YouTube"""
         await interaction.response.defer()
         
+        # Validate guild context
+        if not interaction.guild_id:
+            await interaction.followup.send("❌ This command only works in servers!")
+            return
+        
         # Check if user is in voice channel
         if not interaction.user.voice or not interaction.user.voice.channel:
             await interaction.followup.send("❌ You need to be in a voice channel first!")
@@ -122,8 +151,17 @@ class MusicCommands(commands.Cog):
             
             # Connect to voice if not already connected
             if not player.voice_client or not player.voice_client.is_connected():
-                player.voice_client = await voice_channel.connect()
-                logger.info(f'[MUSIC] Connected to {voice_channel.name}')
+                try:
+                    player.voice_client = await voice_channel.connect()
+                    # Verify connection succeeded
+                    if not player.voice_client or not player.voice_client.is_connected():
+                        await interaction.followup.send("❌ Failed to connect to voice channel")
+                        return
+                    logger.info(f'[MUSIC] Connected to {voice_channel.name}')
+                except Exception as e:
+                    logger.error(f'[MUSIC] Failed to connect to voice: {e}')
+                    await interaction.followup.send(f"❌ Failed to connect to voice channel: {str(e)[:50]}")
+                    return
             
             # Search for song
             await interaction.followup.send(f"🔍 Searching for: `{query}`...")
