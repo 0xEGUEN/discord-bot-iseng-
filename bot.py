@@ -61,6 +61,13 @@ async def on_ready():
     logger.info(f'[READY] Latency: {round(bot.latency * 1000)}ms')
     logger.info('=' * 60)
     
+    # Set bot status to streaming
+    try:
+        await bot.change_presence(activity=discord.Streaming(name='build with love', url='https://twitch.tv/'))
+        logger.info('[STATUS] Bot status set to: Streaming "build with love"')
+    except Exception as e:
+        logger.error(f'[STATUS] Failed to set bot status: {e}')
+    
     try:
         synced = await bot.tree.sync()
         logger.info(f'[SYNC] Synced {len(synced)} command(s)')
