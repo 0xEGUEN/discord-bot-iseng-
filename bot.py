@@ -197,9 +197,9 @@ async def ask(ctx, *, question):
             await ctx.send(f"[ERROR] API Error: {str(e)[:100]}")
 
 # Command: help (override default help)
-@bot.command(name='commands', help='List all available commands')
+@bot.command(name='help', help='List all available commands')
 async def list_commands(ctx):
-    logger.info(f'[COMMANDS] Command executed by {ctx.author}')
+    logger.info(f'[HELP] Command executed by {ctx.author}')
     try:
         # Create main embed with bot information
         embed = discord.Embed(
@@ -298,15 +298,21 @@ async def list_commands(ctx):
         
         # Send with banner image
         try:
-            banner_file = discord.File('assets/banner.jpg', filename='banner.jpg')
-            await ctx.send(file=banner_file, embed=embed)
-        except FileNotFoundError:
-            logger.warning('[COMMANDS] Banner image not found, sending without image')
+            # Use absolute path based on bot.py location
+            banner_path = os.path.join(os.path.dirname(__file__), 'assets/banner.jpg')
+            if os.path.exists(banner_path):
+                banner_file = discord.File(banner_path, filename='banner.jpg')
+                await ctx.send(file=banner_file, embed=embed)
+            else:
+                logger.warning(f'[HELP] Banner not found at {banner_path}, sending without image')
+                await ctx.send(embed=embed)
+        except Exception as e:
+            logger.warning(f'[HELP] Error loading banner: {e}, sending without image')
             await ctx.send(embed=embed)
             
-        logger.info(f'[COMMANDS] Help menu displayed for {ctx.author}')
+        logger.info(f'[HELP] Help menu displayed for {ctx.author}')
     except Exception as e:
-        logger.error(f'[COMMANDS] Error: {e}')
+        logger.error(f'[HELP] Error: {e}')
         logger.debug(traceback.format_exc())
 
 # Command: sync (sync commands with Discord)

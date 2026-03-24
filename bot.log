@@ -806,3 +806,36 @@ openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded you
 2026-03-25 01:40:33,529 | [INFO    ] | DiscordBot | ============================================================
 2026-03-25 01:40:33,529 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
 2026-03-25 01:40:33,529 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:54:49,680 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:54:49,681 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-25 01:54:49,681 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:54:50,000 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-25 01:54:50,001 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-25 01:54:50,002 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:54:50,002 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-25 01:54:50,002 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:54:50,003 | [INFO    ] | discord.client | logging in using static token
+2026-03-25 01:54:51,155 | [INFO    ] | DiscordBot | [COGS] Loaded ai_commands.py
+2026-03-25 01:54:51,160 | [INFO    ] | DiscordBot | [COGS] Loaded moderation_commands.py
+2026-03-25 01:54:51,177 | [ERROR   ] | DiscordBot | [COGS] Failed to load music_commands.py: Extension 'cogs.music_commands' raised an error: ModuleNotFoundError: No module named 'yt_dlp'
+2026-03-25 01:54:51,180 | [INFO    ] | DiscordBot | [COGS] Loaded utility_commands.py
+2026-03-25 01:54:51,180 | [INFO    ] | DiscordBot | [COGS] Loaded 3 cog(s), 1 failed
+2026-03-25 01:54:52,227 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 676c9ffbf907f87987c9cc7a5ec2581d).
+2026-03-25 01:54:54,282 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:54:54,282 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-25 01:54:54,282 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-25 01:54:54,282 | [INFO    ] | DiscordBot | [READY] Latency: 246ms
+2026-03-25 01:54:54,283 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:54:54,283 | [INFO    ] | DiscordBot | [STATUS] Bot status set to: Streaming "build with love"
+2026-03-25 01:54:55,491 | [INFO    ] | DiscordBot | [SYNC] Synced 13 command(s)
+2026-03-25 01:55:27,960 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "None": CommandNotFound
+2026-03-25 01:55:27,960 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 01:55:27,962 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "None": CommandNotFound
+2026-03-25 01:55:27,963 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 01:55:52,631 | [INFO    ] | DiscordBot | [COMMANDS] Command executed by .eguen
+2026-03-25 01:55:53,133 | [INFO    ] | DiscordBot | [COMMANDS] Listed 8 commands
+2026-03-25 01:55:53,751 | [ERROR   ] | DiscordBot | [COMMANDS] Error: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.fields: Must be 25 or fewer in length.
+2026-03-25 01:56:53,138 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:56:53,138 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
+2026-03-25 01:56:53,138 | [INFO    ] | DiscordBot | ============================================================
