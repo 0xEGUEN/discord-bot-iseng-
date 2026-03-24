@@ -56,7 +56,7 @@ else:
 # Create bot instance
 intents = discord.Intents.default()
 intents.message_content = True
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents, help_command=None)
 
 # Store Groq client on bot for sharing with cogs
 bot.__dict__['groq_client'] = client  # type: ignore

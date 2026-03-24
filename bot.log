@@ -839,3 +839,13 @@ In embeds.0.fields: Must be 25 or fewer in length.
 2026-03-25 01:56:53,138 | [INFO    ] | DiscordBot | ============================================================
 2026-03-25 01:56:53,138 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
 2026-03-25 01:56:53,138 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:01,982 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:01,982 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-25 01:59:01,983 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:02,291 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-25 01:59:02,292 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-25 01:59:10,610 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:10,611 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-25 01:59:10,611 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:10,926 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-25 01:59:10,927 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
