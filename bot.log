@@ -1,0 +1,622 @@
+2026-03-24 22:18:36,478 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:18:36,508 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:18:36,813 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:18:36,813 | [WARNING ] | discord.client | davey is not installed, voice will NOT be supported
+2026-03-24 22:18:36,814 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:18:36,816 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:18:36,817 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:18:39,089 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 2811ce4d135fbddcb94df2fd55b2839d).
+2026-03-24 22:18:41,099 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:18:41,118 | [INFO    ] | DiscordBot |   Bot ID: 1113004068613390336
+2026-03-24 22:18:41,119 | [INFO    ] | DiscordBot |   Latency: 247ms
+2026-03-24 22:18:41,119 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:19:35,915 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:19:35,915 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:19:35,915 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:19:36,193 | [INFO    ] | DiscordBot | [INIT] OpenAI client initialized
+2026-03-24 22:19:36,194 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:19:36,194 | [WARNING ] | discord.client | davey is not installed, voice will NOT be supported
+2026-03-24 22:19:36,195 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:19:36,195 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:19:36,195 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:19:36,196 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:19:38,113 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 2880f0a80cc563a33602e9308ce5a74f).
+2026-03-24 22:19:40,153 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:19:40,154 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-24 22:19:40,154 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-24 22:19:40,154 | [INFO    ] | DiscordBot | [READY] Latency: 286ms
+2026-03-24 22:19:40,154 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:19:40,586 | [INFO    ] | DiscordBot | [SYNC] Synced 0 command(s)
+2026-03-24 22:20:55,394 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:20:55,394 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:20:55,395 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:20:55,758 | [INFO    ] | DiscordBot | [INIT] OpenAI client initialized
+2026-03-24 22:20:55,760 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:20:55,760 | [WARNING ] | discord.client | davey is not installed, voice will NOT be supported
+2026-03-24 22:20:55,761 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:20:55,762 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:20:55,762 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:20:55,763 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:20:57,910 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 0c63be1589d82d413e16ce9b1a115a8d).
+2026-03-24 22:20:59,926 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:20:59,926 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-24 22:20:59,927 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-24 22:20:59,927 | [INFO    ] | DiscordBot | [READY] Latency: 281ms
+2026-03-24 22:20:59,927 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:21:00,386 | [INFO    ] | DiscordBot | [SYNC] Synced 0 command(s)
+2026-03-24 22:21:59,357 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:21:59,358 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:21:59,358 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:21:59,644 | [INFO    ] | DiscordBot | [INIT] OpenAI client initialized
+2026-03-24 22:21:59,644 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:21:59,645 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:21:59,646 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:21:59,646 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:21:59,647 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:22:10,272 | [ERROR   ] | DiscordBot | [FATAL] ClientConnectorError: Cannot connect to host discord.com:443 ssl:default [Access is denied]
+2026-03-24 22:22:10,288 | [DEBUG   ] | DiscordBot | Traceback (most recent call last):
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\connector.py", line 1298, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohappyeyeballs\impl.py", line 122, in start_connection
+    raise first_exception
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohappyeyeballs\impl.py", line 73, in start_connection
+    sock = await _connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohappyeyeballs\impl.py", line 208, in _connect_sock
+    await loop.sock_connect(sock, address)
+  File "c:\python314\Lib\asyncio\proactor_events.py", line 728, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\python314\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\python314\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+PermissionError: [WinError 5] Access is denied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\coding\discord bot tapi versi gwe\bot.py", line 195, in <module>
+    bot.run(TOKEN)
+    ~~~~~~~^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\client.py", line 860, in run
+    asyncio.run(runner())
+    ~~~~~~~~~~~^^^^^^^^^^
+  File "c:\python314\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "c:\python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "c:\python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\client.py", line 849, in runner
+    await self.start(token, reconnect=reconnect)
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\client.py", line 777, in start
+    await self.login(token)
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\client.py", line 612, in login
+    data = await self.http.static_login(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\http.py", line 803, in static_login
+    data = await self.request(Route('GET', '/users/@me'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\http.py", line 625, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\client.py", line 1510, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\client.py", line 734, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\connector.py", line 1239, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\connector.py", line 1611, in _create_direct_connection
+    raise last_exc
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\connector.py", line 1580, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\aiohttp\connector.py", line 1321, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.com:443 ssl:default [Access is denied]
+
+2026-03-24 22:22:10,293 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:22:10,295 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
+2026-03-24 22:22:10,295 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:22:22,409 | [ERROR   ] | discord.client | Attempting a reconnect in 1.79s
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1562, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1178, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1209, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Python314\Lib\socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 392, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\http.py", line 571, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 1076, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 734, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1239, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1568, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2026-03-24 22:22:22,409 | [ERROR   ] | discord.client | Attempting a reconnect in 1.27s
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1562, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1178, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1209, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Python314\Lib\socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 392, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\http.py", line 571, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 1076, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 734, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1239, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1568, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2026-03-24 22:22:32,333 | [ERROR   ] | discord.client | Attempting a reconnect in 2.66s
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 419, in from_client
+    await ws.poll_event()
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 644, in poll_event
+    await self.received_message(msg.data)
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 556, in received_message
+    await self.send_as_json(self._keep_alive.get_payload())
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 681, in send_as_json
+    await self.send(utils._to_json(data))
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 677, in send
+    await self.socket.send_str(data)
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client_ws.py", line 245, in send_str
+    await self._writer.send_frame(
+        data.encode("utf-8"), WSMsgType.TEXT, compress=compress
+    )
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\_websocket\writer.py", line 83, in send_frame
+    self._write_websocket_frame(message, opcode, 0)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\_websocket\writer.py", line 151, in _write_websocket_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2026-03-24 22:22:32,383 | [ERROR   ] | discord.client | Attempting a reconnect in 2.62s
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 419, in from_client
+    await ws.poll_event()
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 644, in poll_event
+    await self.received_message(msg.data)
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 556, in received_message
+    await self.send_as_json(self._keep_alive.get_payload())
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 681, in send_as_json
+    await self.send(utils._to_json(data))
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 677, in send
+    await self.socket.send_str(data)
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client_ws.py", line 245, in send_str
+    await self._writer.send_frame(
+        data.encode("utf-8"), WSMsgType.TEXT, compress=compress
+    )
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\_websocket\writer.py", line 83, in send_frame
+    self._write_websocket_frame(message, opcode, 0)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\_websocket\writer.py", line 151, in _write_websocket_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2026-03-24 22:22:35,006 | [ERROR   ] | discord.client | Attempting a reconnect in 4.09s
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1298, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohappyeyeballs\impl.py", line 122, in start_connection
+    raise first_exception
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohappyeyeballs\impl.py", line 73, in start_connection
+    sock = await _connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohappyeyeballs\impl.py", line 208, in _connect_sock
+    await loop.sock_connect(sock, address)
+  File "C:\Python314\Lib\asyncio\proactor_events.py", line 728, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Python314\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+PermissionError: [WinError 5] Access is denied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 392, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\http.py", line 571, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 1076, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 734, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1239, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1611, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1580, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1321, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [Access is denied]
+2026-03-24 22:22:35,036 | [ERROR   ] | discord.client | Attempting a reconnect in 7.34s
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1298, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohappyeyeballs\impl.py", line 122, in start_connection
+    raise first_exception
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohappyeyeballs\impl.py", line 73, in start_connection
+    sock = await _connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohappyeyeballs\impl.py", line 208, in _connect_sock
+    await loop.sock_connect(sock, address)
+  File "C:\Python314\Lib\asyncio\proactor_events.py", line 728, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Python314\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+PermissionError: [WinError 5] Access is denied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\client.py", line 728, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\gateway.py", line 392, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\discord\http.py", line 571, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 1076, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\client.py", line 734, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1239, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1611, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1580, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\aiohttp\connector.py", line 1321, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [Access is denied]
+2026-03-24 22:22:39,778 | [INFO    ] | discord.gateway | Shard ID None has successfully RESUMED session 2880f0a80cc563a33602e9308ce5a74f.
+2026-03-24 22:22:43,089 | [INFO    ] | discord.gateway | Shard ID None has successfully RESUMED session 0c63be1589d82d413e16ce9b1a115a8d.
+2026-03-24 22:23:24,828 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:23:24,829 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:23:24,829 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:23:25,108 | [INFO    ] | DiscordBot | [INIT] OpenAI client initialized
+2026-03-24 22:23:25,109 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:23:25,110 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:23:25,110 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:23:25,110 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:23:25,112 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:23:26,946 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: e6630ab9e1be89fc695a9467091006ec).
+2026-03-24 22:23:29,012 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:23:29,013 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-24 22:23:29,013 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-24 22:23:29,013 | [INFO    ] | DiscordBot | [READY] Latency: 284ms
+2026-03-24 22:23:29,013 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:23:29,393 | [INFO    ] | DiscordBot | [SYNC] Synced 0 command(s)
+2026-03-24 22:24:33,362 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:24:33,362 | [INFO    ] | DiscordBot | [ASK] Question: tes
+2026-03-24 22:24:33,364 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:24:33,365 | [INFO    ] | DiscordBot | [ASK] Question: tes
+2026-03-24 22:24:33,369 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:24:33,370 | [INFO    ] | DiscordBot | [ASK] Question: tes
+2026-03-24 22:24:33,820 | [DEBUG   ] | DiscordBot | [ASK] Calling OpenAI API...
+2026-03-24 22:24:33,840 | [DEBUG   ] | DiscordBot | [ASK] Calling OpenAI API...
+2026-03-24 22:24:33,871 | [DEBUG   ] | DiscordBot | [ASK] Calling OpenAI API...
+2026-03-24 22:24:34,054 | [ERROR   ] | asyncio | Unclosed connection
+client_connection: Connection<ConnectionKey(host='gateway-us-east1-d.discord.gg', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=None)>
+2026-03-24 22:24:34,054 | [ERROR   ] | asyncio | Unclosed connection
+client_connection: Connection<ConnectionKey(host='gateway-us-east1-d.discord.gg', port=443, is_ssl=True, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=None)>
+2026-03-24 22:24:35,186 | [INFO    ] | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-24 22:24:35,186 | [INFO    ] | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-24 22:24:35,187 | [INFO    ] | openai._base_client | Retrying request to /chat/completions in 0.430728 seconds
+2026-03-24 22:24:36,205 | [INFO    ] | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-24 22:24:36,206 | [INFO    ] | openai._base_client | Retrying request to /chat/completions in 0.798938 seconds
+2026-03-24 22:24:36,367 | [INFO    ] | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-24 22:24:36,368 | [INFO    ] | openai._base_client | Retrying request to /chat/completions in 0.825321 seconds
+2026-03-24 22:24:37,119 | [INFO    ] | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-24 22:24:37,119 | [INFO    ] | openai._base_client | Retrying request to /chat/completions in 0.946642 seconds
+2026-03-24 22:24:37,465 | [INFO    ] | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-24 22:24:37,466 | [ERROR   ] | DiscordBot | [ASK] Error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-03-24 22:24:37,469 | [DEBUG   ] | DiscordBot | Traceback (most recent call last):
+  File "D:\coding\discord bot tapi versi gwe\bot.py", line 135, in ask
+    logger.debug('[ASK] Calling OpenAI API...')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        max_tokens=500
+    
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\openai\resources\chat\completions\completions.py", line 1211, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+2026-03-24 22:24:37,663 | [INFO    ] | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-24 22:24:37,664 | [ERROR   ] | DiscordBot | [ASK] Error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-03-24 22:24:37,667 | [DEBUG   ] | DiscordBot | Traceback (most recent call last):
+  File "d:\coding\discord bot tapi versi gwe\bot.py", line 136, in ask
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+    ...<3 lines>...
+        max_tokens=500
+    )
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1211, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+2026-03-24 22:24:38,348 | [INFO    ] | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-24 22:24:38,349 | [ERROR   ] | DiscordBot | [ASK] Error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-03-24 22:24:38,352 | [DEBUG   ] | DiscordBot | Traceback (most recent call last):
+  File "D:\coding\discord bot tapi versi gwe\bot.py", line 135, in ask
+    logger.debug('[ASK] Calling OpenAI API...')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        max_tokens=500
+    
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\openai\resources\chat\completions\completions.py", line 1211, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\openai\_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hnkwj\AppData\Roaming\Python\Python314\site-packages\openai\_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
