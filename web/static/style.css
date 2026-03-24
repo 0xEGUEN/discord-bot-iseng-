@@ -205,6 +205,75 @@ header h1 {
     color: #667eea;
 }
 
+.stats-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f5f7ff 0%, #fff5f7 100%);
+    border-bottom: 1px solid #eee;
+}
+
+.stats-section h2 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.stat-card:hover:not(.loading) {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    border-color: #667eea;
+}
+
+.stat-icon {
+    font-size: 2em;
+    min-width: 50px;
+    text-align: center;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 0.85em;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.stat-card.loading {
+    opacity: 0.6;
+}
+
+.command-type.music {
+    background: #fef3c7;
+    color: #b45309;
+}
+
 footer {
     background: #f3f4f6;
     padding: 20px;
@@ -224,5 +293,22 @@ footer {
 
     .command-filter {
         flex-wrap: wrap;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-icon {
+        font-size: 1.5em;
+        min-width: 40px;
+    }
+
+    .stat-value {
+        font-size: 1.2em;
     }
 }
