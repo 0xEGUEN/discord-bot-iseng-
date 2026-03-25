@@ -1,0 +1,33 @@
+{
+  "name": "discord-bot-wrapper",
+  "version": "2.1.0",
+  "description": "Discord Bot - Node.js Wrapper untuk menjalankan Python bot",
+  "main": "bot.js",
+  "type": "module",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node bot.js",
+    "install-deps": "npm install && pip install -r requirements.txt",
+    "check-env": "node check-env.js",
+    "setup": "node setup.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "music",
+    "ai",
+    "moderation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
