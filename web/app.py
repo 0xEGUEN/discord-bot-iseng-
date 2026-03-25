@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import json
 import sys
+import logging
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -11,12 +12,28 @@ from language_support import get_language, translate
 
 load_dotenv()
 
+# Setup Logging for Web App
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s | [%(levelname)-8s] | %(name)s | %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler('../bot.log', encoding='utf-8')
+    ]
+)
+
+logger = logging.getLogger('FlaskApp')
+logger.setLevel(logging.INFO)
+
 app = Flask(__name__)
 
 # Security: Disable debug mode in production
 DEBUG_MODE = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
 app.config['DEBUG'] = DEBUG_MODE
 app.config['ENV'] = 'development' if DEBUG_MODE else 'production'
+
+logger.info('[WEB] Flask Web Server Initializing')
+logger.info(f'[WEB] Debug Mode: {DEBUG_MODE}')
 
 # Dummy stats (in production, you'd connect to the actual bot)
 bot_stats = {
@@ -35,6 +52,8 @@ def dashboard():
     lang = request.args.get('lang', 'en')
     if lang not in ['en', 'id']:
         lang = 'en'
+    
+    logger.info(f'[WEB] Dashboard access from {request.remote_addr} - Language: {lang}')
     
     translations = get_language(lang)
     
@@ -90,6 +109,7 @@ def dashboard():
 
 @app.route('/api/status')
 def get_status():
+    logger.info(f'[WEB] Status API request from {request.remote_addr}')
     return {
         "status": "online" if bot_stats["is_online"] else "offline",
         "bot_name": "ChatGPT AI Bot",
@@ -99,6 +119,7 @@ def get_status():
 @app.route('/api/stats')
 def get_stats():
     """Get real-time bot statistics"""
+    logger.info(f'[WEB] Stats API request from {request.remote_addr}')
     def format_uptime(seconds):
         hours = seconds // 3600
         minutes = (seconds % 3600) // 60
@@ -119,6 +140,7 @@ def get_stats():
 @app.route('/api/translations/<lang>')
 def get_translations(lang):
     """Get translations for a specific language"""
+    logger.info(f'[WEB] Translations request from {request.remote_addr} - Language: {lang}')
     # Input validation: prevent injection attacks
     if not isinstance(lang, str) or len(lang) > 5 or not lang.isalpha():
         lang = 'en'
@@ -129,6 +151,7 @@ def get_translations(lang):
 @app.route('/api/health')
 def health_check():
     """Quick health check"""
+    logger.info(f'[WEB] Health check from {request.remote_addr}')
     return jsonify({
         "healthy": True,
         "timestamp": datetime.now().isoformat()
@@ -137,4 +160,10 @@ def health_check():
 if __name__ == '__main__':
     # Use environment variable for debug mode
     port = int(os.getenv('PORT', 5000))
-    app.run(debug=DEBUG_MODE, port=port, host='0.0.0.0')
+    host = os.getenv('HOST', '127.0.0.1')  # Default to localhost, can override with 0.0.0.0
+    logger.info('=' * 60)
+    logger.info(f'[WEB] Starting Flask Web Server')
+    logger.info(f'[WEB] Host: {host} | Port: {port}')
+    logger.info(f'[WEB] Debug Mode: {DEBUG_MODE}')
+    logger.info('=' * 60)
+    app.run(debug=DEBUG_MODE, port=port, host=host)

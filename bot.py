@@ -201,6 +201,17 @@ async def ask(ctx, *, question):
 async def list_commands(ctx):
     logger.info(f'[HELP] Command executed by {ctx.author}')
     try:
+        # Send banner first at the top
+        banner_path = os.path.join(os.path.dirname(__file__), 'assets/banner.jpg')
+        if os.path.exists(banner_path):
+            try:
+                banner_file = discord.File(banner_path, filename='banner.jpg')
+                banner_embed = discord.Embed(color=discord.Color.blurple())
+                banner_embed.set_image(url='attachment://banner.jpg')
+                await ctx.send(file=banner_file, embed=banner_embed)
+            except Exception as e:
+                logger.warning(f'[HELP] Error sending banner: {e}')
+        
         embeds = []
         
         # EMBED 1: MAIN + UTILITY + MUSIC
@@ -209,14 +220,6 @@ async def list_commands(ctx):
             description='Use `/command_name` for slash commands or `!command_name` for prefix commands',
             color=discord.Color.blurple()
         )
-        
-        # Try to add banner image
-        try:
-            banner_path = os.path.join(os.path.dirname(__file__), 'assets/banner.jpg')
-            if os.path.exists(banner_path):
-                embed1.set_image(url='attachment://banner.jpg')
-        except:
-            pass
         
         embed1.set_thumbnail(url=bot.user.avatar.url if bot.user and bot.user.avatar else '')
         
@@ -328,14 +331,9 @@ async def list_commands(ctx):
         
         embeds.append(embed3)
         
-        # Send all embeds with banner file
+        # Send command embeds (banner already sent at top)
         try:
-            banner_path = os.path.join(os.path.dirname(__file__), 'assets/banner.jpg')
-            if os.path.exists(banner_path):
-                banner_file = discord.File(banner_path, filename='banner.jpg')
-                await ctx.send(file=banner_file, embeds=embeds)
-            else:
-                await ctx.send(embeds=embeds)
+            await ctx.send(embeds=embeds)
         except Exception as e:
             logger.warning(f'[HELP] Error sending embeds: {e}')
             await ctx.send(embeds=embeds)

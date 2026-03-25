@@ -5,9 +5,40 @@ Simple Discord bot built with discord.py containing 5 basic commands: ping, hell
 
 ## Quick Start
 
-### 1. Install Dependencies
+### Choose Your Runtime:
+
+#### Option A: Python (Original)
 ```bash
 pip install -r requirements.txt
+python bot.py
+```
+
+#### Option B: Node.js (New - Recommended)
+```bash
+npm install
+npm start
+```
+
+#### Option C: Pterodactyl Panel (Hosting)
+```bash
+# Upload files to panel
+# Set startup command: bash start.sh
+# Set DISCORD_TOKEN in environment
+# Click Start button
+```
+
+---
+
+### 1. Install Dependencies
+
+**Python:**
+```bash
+pip install -r requirements.txt
+```
+
+**Node.js:**
+```bash
+npm install
 ```
 
 ### 2. Get Discord Bot Token
@@ -27,9 +58,24 @@ pip install -r requirements.txt
 4. Open generated URL and add bot to server
 
 ### 5. Run Bot
+
+**Python:**
 ```bash
 python bot.py
 ```
+
+**Node.js (Recommended):**
+```bash
+npm start
+```
+
+### Node.js Additional Commands
+```bash
+npm run setup       # Interactive setup wizard
+npm run check-env   # Verify environment
+npm run dev         # Development mode
+```
+
 
 ## Available Commands
 - `!ping` - Check bot latency
@@ -39,10 +85,26 @@ python bot.py
 - `!commands` - List all commands
 
 ## File Structure
+**Core Files:**
 - `bot.py` - Main bot application
 - `requirements.txt` - Python dependencies
 - `.env` - Environment variables (create from .env.example)
 - `README.md` - Full documentation
+
+**Node.js Wrapper Files:**
+- `bot.js` - Node.js wrapper to run bot.py
+- `package.json` - Node.js dependencies & scripts
+- `check-env.js` - Environment verification
+- `setup.js` - Interactive setup wizard
+- `README_NODEJS.md` - Node.js setup guide
+
+**Pterodactyl Panel Files:**
+- `start.sh` - Pterodactyl startup script
+- `Dockerfile` - Docker configuration
+- `PTERODACTYL_SETUP.md` - Pterodactyl setup guide
+- `PTERODACTYL_CONFIG.md` - Pterodactyl configuration
+- `PTERODACTYL_STARTUP.txt` - Startup command reference
+
 
 ## Notes
 - Make sure `.env` is in `.gitignore` to protect your token
